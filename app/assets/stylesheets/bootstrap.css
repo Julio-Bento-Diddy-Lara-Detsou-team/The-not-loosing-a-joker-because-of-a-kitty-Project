@@ -7146,7 +7146,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #f20089 !important;
+  background-color: #333 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -10814,7 +10814,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar {
   border-width: 2px;
-  border-style: solid;
   border-radius: 25px 25px 55px 5px/5px 55px 25px 25px;
 }
 
