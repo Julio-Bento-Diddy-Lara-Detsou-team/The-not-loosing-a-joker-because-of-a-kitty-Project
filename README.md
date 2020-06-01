@@ -1,4 +1,4 @@
-# 🐱  The-not-loosing-a-joker-because-of-a-kitty-Project
+# The-not-loosing-a-joker-because-of-a-kitty-Project
 
 Photos pro des plus beaux chats de stars
 
@@ -7,9 +7,10 @@ Photos pro des plus beaux chats de stars
 ## Visite en ligne http://tbc/git
 
 ### Compte Administrateur
+
 Connectez-vous avec :
-login : gato@gatodoe.com | tbc
-password : miaou123 tbc
+**login :** gato@gatodoe.com | tbc
+**password :** miaou123 tbc
 
 
 ## :wrench: Installation en local
@@ -49,19 +50,16 @@ http://localhost:3000/
 
 ### (Rappel) Compte Administrateur
 Connectez-vous avec :
-login : gato@gatodoe.com | tbc
-password : miaou123 tbc
+**login :** gato@gatodoe.com | tbc
+**password :** miaou123 tbc
 
-Kiffez bien le petit tour !
+*Kiffez bien le petit tour !*
 
 ## 🐯 Auteurs
-Julien Tribouillier : https://github.com/Popikadir
 
-David Bento-Pereira: https://github.com/davidBentoPereira
-
-Detsouvan Soum: https://github.com/detsou
-
-Andy Hazard : https://github.com/didy400
-
-Lara Schutz : https://github.com/Laramarey
+- [:fire: Julien Tribouillier](https://github.com/Popikadir)
+- [:seedling: David Bento-Pereira](https://github.com/davidBentoPereira)
+- [:v: Detsouvan Soum](https://github.com/detsou)
+- [:muscle: Andy Hazard](https://github.com/didy400)
+- [:godmode: Lara Schutz](https://github.com/Laramarey)
 
