@@ -33,7 +33,7 @@ end
       stripe_customer_id: Faker::Code.ean
   )
   x += 1
-  puts "#{x}/30 users created"
+  puts "#{x}/30 Orders created"
 end
 
 30.times do |x|
