@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Item.destroy_all
+10.times do |x|
+  Item.new(title: Faker::Creature::Cat.name,
+           description: Faker::Lorem.paragraph,
+           image_url: nil,
+           price: rand(1...5))
+  x += 1
+  puts "#{x}/10 items created"
+end
