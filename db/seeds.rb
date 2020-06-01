@@ -6,14 +6,15 @@ OrderItem.destroy_all
 users = []
 items = []
 orders = []
-number_photo = rand(300..399)
 
 20.times do |x|
+  number_photo = rand(300..399)
+
   items << Item.create!(
       title: Faker::Creature::Cat.name,
       description: Faker::Lorem.paragraph,
       image_url: "https://placekitten.com/200/#{number_photo}",
-      price: rand(1...5))
+      price: rand(1..5))
   x += 1
   puts "#{x}/20 items created"
 end
