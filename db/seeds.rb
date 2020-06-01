@@ -6,11 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Item.destroy_all
-10.times do |x|
+User.destroy_all
+
+number_photo = rand ( 300..399)
+20.times do |x|
   Item.new(title: Faker::Creature::Cat.name,
            description: Faker::Lorem.paragraph,
-           image_url: nil,
+           image_url: "https://placekitten.com/200/#{number_photo}",
            price: rand(1...5))
   x += 1
-  puts "#{x}/10 items created"
+  puts "#{x}/20 items created"
+end
+
+10.times do |x|
+  User.create(email: Faker::Name.name + "@yopmail.com" ,
+              encrypted_password: 1234567
+              )
+  x += 1
+  puts "#{x}/10 users created"
 end
