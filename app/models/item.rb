@@ -7,7 +7,7 @@ class Item < ApplicationRecord
 
   validates :title,
             presence: true,
-            lenght: {in: 3..25}
+            length: {in: 3..25}
 
   validates :description,
             length: {maximum: 1500}
