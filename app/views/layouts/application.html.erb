@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="bootstrap.css">
   </head>
 
   <body>
@@ -15,5 +16,8 @@
   <p class="alert"><%= alert %></p>
 
   <%= yield %>
+  <!--TBC regarder pourquoi les scripts ne fontionnent pas sur le menu burger et le carroussel-->
+  <script src="assets/javascripts/bootstrap.js"></script>
+  <script src="assets/javascripts/jquery.js"</script>
   </body>
 </html>
