@@ -1,0 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Work+Sans:wght@200&display=swap');
+
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: #5f6368;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Itim', sans-serif;
+}
+
+.bg-primary {
+    background-color: #f20089 !important;
+}
+
+.bg-secondary {
+    background-color: #2d00f7 !important;
+}
+
+.bg-success {
+    background-color: #74e8d4 !important;
+}
+
+.bg-warning {
+    background-color: #ef8354 !important;
+}
+
+.bg-danger {
+    background-color: #ff595e !important;
+}
+
