@@ -1,0 +1,2 @@
+class ShoppingSession < ApplicationRecord
+end
