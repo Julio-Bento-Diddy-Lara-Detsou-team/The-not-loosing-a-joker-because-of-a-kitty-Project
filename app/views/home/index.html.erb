@@ -1,0 +1,12 @@
+<h1>Bienvenue sur Kitten Projet, l'appli de photos de chatons super trendy</h1>
+<div class="container mt-a pt-5">
+
+    <% if user_signed_in? %>
+      <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Se connecter', new_user_session_path %>
+    <% end %>
+
+</div>
+
+
