@@ -29,6 +29,7 @@ end
 
 30.times do |x|
   Order.create(
+      user_id: User.all.sample,
       stripe_customer_id: Faker::Code.ean
   )
   x += 1
