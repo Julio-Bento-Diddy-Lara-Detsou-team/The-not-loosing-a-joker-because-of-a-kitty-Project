@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Item.destroy_all
 User.destroy_all
+Order.destroy_all
 
 number_photo = rand ( 300..399)
 20.times do |x|
@@ -24,4 +25,12 @@ end
               )
   x += 1
   puts "#{x}/10 users created"
+end
+
+30.times do |x|
+  Order.create(
+      stripe_customer_id: Faker::Code.ean
+  )
+  x += 1
+  puts "#{x}/30 users created"
 end
