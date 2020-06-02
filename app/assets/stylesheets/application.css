@@ -12,5 +12,9 @@
  *
  *= require "bootstrap"
  *= require "style"
+ *= require "main"
+ *= require "navbar"
+ *= require "jumbotron"
+ *= require "footer"
  *= require_self
  */
