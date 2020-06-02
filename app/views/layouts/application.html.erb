@@ -21,7 +21,9 @@
 <body>
 <%= render "layouts/navbar" %>
 
-<%= render "layouts/jumbotron" %>
+<%if controller_name === 'items' && action_name === 'index' %>
+  <%= render "layouts/jumbotron" %>
+<% end %>
 
 <div class="container">
   <%= render "layouts/notice_messages" %>

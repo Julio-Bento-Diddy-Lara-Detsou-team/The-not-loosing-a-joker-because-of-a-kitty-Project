@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
-    @items.each do |item|
-    end
+    flash.now[:notice] = "Ceci est un exemple de notification que vous pouvez utiliser !"
   end
 
   def show

@@ -1,5 +1,5 @@
 <!-- Page title-->
-<h2 class="h1 text-center">S'inscrire</h2>
+<h2 class="h1 text-center mb-5">S'inscrire</h2>
 
 <!-- Sign in form -->
 <div class="row justify-content-center">
@@ -38,8 +38,9 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-key"></i></span>
         </div>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Mot de passe', class: 'form-control' %>
       </div>
+      <small>Saisissez une seconde fois votre mot de passe</small>
     </div>
 
     <!-- Input remember me -->
