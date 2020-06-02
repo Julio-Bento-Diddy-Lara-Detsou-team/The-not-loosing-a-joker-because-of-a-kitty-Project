@@ -26,4 +26,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+.env
 .idea
+.floo
+.flooignore
+.DS_Store

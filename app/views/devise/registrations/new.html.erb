@@ -1,0 +1,66 @@
+<!-- Page title-->
+<h2 class="h1 text-center my-5">S'inscrire</h2>
+
+<!-- Sign in form -->
+<div class="row justify-content-center">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <!-- Error messages -->
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <!-- Input email -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+        <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: 'Email', class: 'form-control' %>
+      </div>
+      <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre adresse email.</small>
+    </div>
+
+    <!-- Input password -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-key"></i></span>
+        </div>
+        <%= f.password_field :password, required: true, autocomplete: "current-password", placeholder: 'Mot de passe', class: 'form-control' %>
+      </div>
+      <% if @minimum_password_length %>
+        <small>(<%= @minimum_password_length %> caractères minimum)</small>
+      <% end %>
+    </div>
+
+    <!-- Input password -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-key"></i></span>
+        </div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Mot de passe', class: 'form-control' %>
+      </div>
+      <small>Saisissez une seconde fois votre mot de passe</small>
+    </div>
+
+    <!-- Input remember me -->
+    <% if devise_mapping.rememberable? %>
+      <div class="form-group">
+        <%= f.check_box :remember_me, class: 'ml-3 mr-1 my-auto' %>
+        <%= f.label "Rester connecté", class: 'my-auto' %>
+      </div>
+    <% end %>
+
+    <!-- Submit button -->
+    <div class="form-group admin-connect col-12">
+      <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-paper-plane"></i> Inscription</button>
+    </div>
+
+    <!-- Links -->
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div> <!-- /.row-->
+
+
+
+

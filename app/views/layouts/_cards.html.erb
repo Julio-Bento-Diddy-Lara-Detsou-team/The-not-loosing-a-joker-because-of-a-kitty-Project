@@ -1,0 +1,31 @@
+<!-- Card -->
+<div class="row row-cols-1 row-cols-md-2">
+  <% @items.each do |item| %>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card h-100">
+        <a href="<%= item_path(item.id) %>">
+          <img src="<%= item.image_url %>" class="card-img-top" alt="...">
+        </a>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8">
+              <!-- Name + Breed-->
+              <h5 class="card-title"><%= item.title %> <span class="badge badge-secondary">RA</span></h5>
+            </div>
+            <div class="col-4">
+              <!-- Notation -->
+              <p class="card-text text-center"><small class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</small></p>
+            </div>
+          </div>
+          <!-- Description -->
+          <p class="card-text"><%= truncate(item.description, :length => 150) %></p>
+          <!-- Price -->
+          <p class="card-text h4 text-center"><%= item.price %>€</p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="#" class="btn btn-primary"><i class="fas fa-cart-arrow-down"></i> Ajouter au panier</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
