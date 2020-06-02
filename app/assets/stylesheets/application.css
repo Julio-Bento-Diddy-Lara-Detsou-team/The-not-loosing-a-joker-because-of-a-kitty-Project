@@ -11,6 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  *= require "bootstrap"
+ *= require "main"
+ *= require "navbar"
+ *= require "jumbotron"
+ *= require "home"
+ *= require "card"
+ *= require "footer"
  *= require "style"
  *= require_self
  */

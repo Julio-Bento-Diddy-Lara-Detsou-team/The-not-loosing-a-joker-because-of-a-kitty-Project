@@ -1,23 +1,22 @@
 <!-- Card -->
 <div class="row row-cols-1 row-cols-md-2">
   <% @items.each do |item| %>
-
     <div class="col-12 col-md-6 col-lg-4 mb-4">
       <div class="card h-100">
-        <img src="<%= item.image_url %>" class="card-img-top h-50" alt="...">
-        <div class="card-body mt-5 h-20">
+        <img src="<%= item.image_url %>" class="card-img-top" alt="...">
+        <div class="card-body mt-5">
           <div class="row">
             <div class="col-8">
               <!-- Name + Breed-->
-              <h5 class="card-title"><%= item.title %><span class="badge badge-secondary"></span></h5>
-            </div>RA
+              <h5 class="card-title"><%= item.title %> <span class="badge badge-secondary">RA</span></h5>
+            </div>
             <div class="col-4">
               <!-- Notation -->
               <p class="card-text text-center"><small class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</small></p>
             </div>
           </div>
           <!-- Description -->
-          <p class="card-text"><%= truncate( item.description , :length => 150) %></p>
+          <p class="card-text"><%= truncate(item.description, :length => 150) %></p>
           <!-- Price -->
           <p class="card-text h4 text-center"><%= item.price %>€</p>
         </div>
@@ -27,5 +26,4 @@
       </div>
     </div>
   <% end %>
-
 </div>
