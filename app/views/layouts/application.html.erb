@@ -19,14 +19,20 @@
 </head>
 
 <body>
-<%= render "layouts/navbar" %>
+<header>
+  <%= render "layouts/navbar" %>
+</header>
 
-<%= render "layouts/jumbotron" %>
+<main>
+  <% if controller_name === 'items' && action_name === 'index' %>
+    <%= render "layouts/jumbotron" %>
+  <% end %>
 
-<div class="container">
-  <%= render "layouts/notice_messages" %>
-  <%= yield %>
-</div>
+  <div class="container">
+    <%= render "layouts/notice_messages" %>
+    <%= yield %>
+  </div>
+</main>
 
 <%= render "layouts/footer" %>
 

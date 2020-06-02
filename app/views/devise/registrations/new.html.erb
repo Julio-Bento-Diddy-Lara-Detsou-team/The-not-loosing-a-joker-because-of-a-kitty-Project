@@ -1,29 +1,65 @@
-<h2>Sign up</h2>
+<!-- Page title-->
+<h2 class="h1 text-center mt-5">S'inscrire</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<!-- Sign in form -->
+<div class="row justify-content-center">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <!-- Error messages -->
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <!-- Input email -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+        <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: 'Email', class: 'form-control' %>
+      </div>
+      <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre adresse email.</small>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <!-- Input password -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-key"></i></span>
+        </div>
+        <%= f.password_field :password, required: true, autocomplete: "current-password", placeholder: 'Mot de passe', class: 'form-control' %>
+      </div>
+      <% if @minimum_password_length %>
+        <small>(<%= @minimum_password_length %> caractères minimum)</small>
+      <% end %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <!-- Input password -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-key"></i></span>
+        </div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <!-- Input remember me -->
+    <% if devise_mapping.rememberable? %>
+      <div class="form-group">
+        <%= f.check_box :remember_me, class: 'ml-3 mr-1 my-auto' %>
+        <%= f.label "Rester connecté", class: 'my-auto' %>
+      </div>
+    <% end %>
+
+    <!-- Submit button -->
+    <div class="form-group admin-connect col-12">
+      <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-paper-plane"></i> Inscription</button>
+    </div>
+
+    <!-- Links -->
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div> <!-- /.row-->
+
+
+
+

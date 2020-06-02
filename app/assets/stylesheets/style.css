@@ -1,12 +1,21 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Work+Sans:wght@200&display=swap');
-
 
 body {
     font-family: 'Nunito', sans-serif;
     color: #5f6368;
     font-size: 13px;
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+}
+
+main {
+    padding-top: 56px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -14,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-primary {
-    background-color: #f20089 !important;
+    background-color: #fa9fd1 !important;
 }
 
 .bg-secondary {
@@ -32,4 +41,23 @@ h1, h2, h3, h4, h5, h6 {
 .bg-danger {
     background-color: #ff595e !important;
 }
+.btn-primary {
+    background-color: #74e8d4 !important;
+}
 
+
+.btn-outline-jumbotron {
+    color: #74e8d4;
+    border-color: #74e8d4;
+}
+
+.btn-outline-jumbotron:hover {
+    color: #ffffff;
+    background-color: #74e8d4;
+    border-color: #ffffff;
+}
+
+.display-4-selection {
+    color: #74e8d4;
+    font-size: 67px;
+}

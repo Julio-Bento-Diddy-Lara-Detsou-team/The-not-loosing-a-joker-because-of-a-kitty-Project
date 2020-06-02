@@ -1,26 +1,48 @@
-<h2>Log in</h2>
+<!-- Page title-->
+<h2 class="h1 text-center mt-5">Se connecter</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<!-- Sign in form -->
+<div class="row justify-content-center">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'col-12') do |f| %>
+    <!-- Input email -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: 'Email', class: 'form-control' %>
+      </div>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
+
+    <!-- Input password -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-key"></i></span>
+        </div>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <%= f.password_field :password, required: true, autocomplete: "current-password", placeholder: 'Mot de passe', class: 'form-control' %>
+      </div>
+    </div>
+
+    <!-- Input remember me -->
+    <% if devise_mapping.rememberable? %>
+      <div class="form-group">
+        <%= f.check_box :remember_me, class: 'ml-3 mr-1 my-auto' %>
+        <%= f.label "Rester connecté", class: 'my-auto' %>
+      </div>
+    <% end %>
+
+    <!-- Submit button -->
+    <div class="form-group admin-connect col-12">
+
+      <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Connexion</button>
+
+    </div>
+
+    <!-- Links -->
+    <%= render "devise/shared/links" %>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div> <!-- /.row-->
