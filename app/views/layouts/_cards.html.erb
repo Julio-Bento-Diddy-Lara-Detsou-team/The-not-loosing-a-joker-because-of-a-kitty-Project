@@ -3,7 +3,9 @@
   <% @items.each do |item| %>
     <div class="col-12 col-md-6 col-lg-4 mb-4">
       <div class="card h-100">
-        <img src="<%= item.image_url %>" class="card-img-top" alt="...">
+        <a href="<%= item_path(item.id) %>">
+          <img src="<%= item.image_url %>" class="card-img-top" alt="...">
+        </a>
         <div class="card-body">
           <div class="row">
             <div class="col-8">
