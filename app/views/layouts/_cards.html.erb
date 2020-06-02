@@ -1,15 +1,14 @@
 <!-- Card -->
 <div class="row row-cols-1 row-cols-md-2">
-  <% 8.times do %>
-
+  <% @items.each do |item| %>
     <div class="col-12 col-md-6 col-lg-4 mb-4">
-      <div class="card">
-        <img src="https://image.winudf.com/v2/image/Y29tLkN1dGVraXR0eS5hbGlmZHJvaWRfc2NyZWVuXzFfMTUwNjQ1NjUyM18wMjc/screen-1.jpg?h=355&fakeurl=1&type=.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
+      <div class="card h-100">
+        <img src="<%= item.image_url %>" class="card-img-top" alt="...">
+        <div class="card-body mt-5">
           <div class="row">
             <div class="col-8">
               <!-- Name + Breed-->
-              <h5 class="card-title">Cat name <span class="badge badge-secondary">Persan</span></h5>
+              <h5 class="card-title"><%= item.title %> <span class="badge badge-secondary">RA</span></h5>
             </div>
             <div class="col-4">
               <!-- Notation -->
@@ -17,9 +16,9 @@
             </div>
           </div>
           <!-- Description -->
-          <p class="card-text"><%= truncate("Some quick example text to build on the card title and make up the bulk of the card's content.", :length => 80) %></p>
+          <p class="card-text"><%= truncate(item.description, :length => 150) %></p>
           <!-- Price -->
-          <p class="card-text h4 text-center">199.90€</p>
+          <p class="card-text h4 text-center"><%= item.price %>€</p>
         </div>
         <div class="card-footer text-center">
           <a href="#" class="btn btn-primary"><i class="fas fa-cart-arrow-down"></i> Ajouter au panier</a>
@@ -27,5 +26,4 @@
       </div>
     </div>
   <% end %>
-
 </div>
