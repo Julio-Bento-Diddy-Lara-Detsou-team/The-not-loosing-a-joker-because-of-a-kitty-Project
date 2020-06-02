@@ -2,6 +2,7 @@
 <h2 class="display-4-selection text-center mb-5">Votre panier</h2>
 
 <div class="row justify-content-around mb-3">
+  <!-- Items list -->
   <div class="col-lg-6">
     <% @items.each do |item| %>
       <div class="row">
@@ -29,14 +30,16 @@
     <% end %>
   </div>
 
+  <!-- Cart total amount -->
   <div class="col-lg-4">
     <h2 class="text-center mb-5">Total de votre panier</h2>
 
     <div class="row ml-5">
-      <p class="mb-3"><i class="fas fa-check mr-3"></i>Aucun frais de ports (envoi par mail)</p>
+      <p class="mb-3"><i class="fas fa-check mr-3"></i>Aucun frais de ports</p>
+      <p class="mb-3"><i class="fas fa-check mr-3"></i>Envoi instantané par email</p>
       <p class="mb-3"><i class="fas fa-check mr-3"></i>Satisfait mais pas remboursé</p>
-      <p class="mb-3"><i class="fas fa-check mr-3"></i>Animaux non testés en laboratoires</p>
     </div>
+    <!-- Divider -->
     <hr class="mt-5"/>
 
     <!-- Shipping price-->
@@ -44,6 +47,7 @@
       <div class="col text-left"><p class="font-weight-bold">Livraison</p></div>
       <div class="col text-right">Gratuite</div>
     </div>
+
     <!-- Total Products Price -->
     <div class="row">
       <div class="col text-left"><p class="font-weight-bold">Sous-total</p></div>
@@ -56,12 +60,5 @@
     </div>
   </div>
 </div>
-
-<h2> Test en cours...</h2>
-<%=
-  if current_user()
-    # puts @cart.items[0].title
-  end
-%>
 
 
