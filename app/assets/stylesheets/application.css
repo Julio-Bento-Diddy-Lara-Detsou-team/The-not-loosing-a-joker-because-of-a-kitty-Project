@@ -18,5 +18,9 @@
  *= require "card"
  *= require "footer"
  *= require "style"
+ *= require "main"
+ *= require "navbar"
+ *= require "jumbotron"
+ *= require "footer"
  *= require_self
  */
