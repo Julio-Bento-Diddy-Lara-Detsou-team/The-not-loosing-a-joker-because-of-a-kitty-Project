@@ -1,4 +1,4 @@
 class Cart < ApplicationRecord
   has_one :user
-  has_many :items, throught: :shopping_session
+  has_many :items, through: :shopping_session
 end
