@@ -14,7 +14,8 @@ class ShoppingSessionsController < ApplicationController
     end
 
     flash[:success] = "Le produit a bien été ajouté au panier"
-    redirect_to items_path
+
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
@@ -26,7 +27,9 @@ class ShoppingSessionsController < ApplicationController
       current_user.cart.items.delete(@item)
     end
 
-    redirect_to cart_path(current_user.cart.id)
+    flash[:error] = "Le produit a bien été retiré du panier"
+
+    redirect_back(fallback_location: root_path)
   end
 
 end

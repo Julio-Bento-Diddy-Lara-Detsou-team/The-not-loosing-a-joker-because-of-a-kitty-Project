@@ -2,7 +2,6 @@ class CartsController < ApplicationController
   include ApplicationHelper
 
   before_action :authenticate_user!
-  before_action :create_session_cart
 
   def create
     @cart = Cart.create(user: current_user())

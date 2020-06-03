@@ -18,7 +18,7 @@
                 <%#= form_tag shopping_session_path(item.id), method: "delete" do %>
                   <%#= submit_tag "&times;", {class: 'close'} %>
                 <%# end %>
-                <a href="<%= shopping_session_path(item.id) %>", data-method="DELETE">&times;</a>
+                <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE">&times;</a>
                 <div class="row align-items-center">
                   <div class="col">
                     <h5 class="card-title"><%= item.title %></h5>

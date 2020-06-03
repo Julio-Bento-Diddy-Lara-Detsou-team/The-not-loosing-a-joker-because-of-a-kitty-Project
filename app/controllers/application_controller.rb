@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
+
+  before_action :create_session_cart
 
   # If session cart does not already exist then create it
   def create_session_cart
@@ -15,4 +18,5 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path
     end
   end
+
 end
