@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources 'items'
   resources 'carts'
-  get 'delete/item/:id', to: 'carts#remove_item', as: 'remove_item'
+  resources 'shopping_sessions', only: [:new, :destroy]
+  resources 'order_items', only: [:new, :destroy]
   resources :charges
 end

@@ -13,13 +13,6 @@ class CartsController < ApplicationController
   end
 
   def show
-    # Get user's item
-    @item = Item.find(params[:id])
-
-    # Add item to User's cart items list
-    current_user.cart.items << @item
-    current_user.save
-
     # Get user's cart's items to pass it to the view
     @items = current_user.cart.items
 
@@ -33,18 +26,4 @@ class CartsController < ApplicationController
   def destroy
     @cart = Cart.destroy(params[:id])
   end
-
-  def remove_item
-    # Find the item to remove
-    @item = Item.find(params[:id])
-
-    # Remove the item from Carts TODO: Complete code below
-    # @cart = Cart.find(current_user)
-    # @cart.items.delete(@item)
-
-    redirect_to cart_path
-  end
-
-  private
-
 end
