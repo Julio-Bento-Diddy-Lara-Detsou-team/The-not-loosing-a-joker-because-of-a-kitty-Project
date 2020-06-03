@@ -43,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-primary {
     background-color: #74e8d4 !important;
+    border-color: #74e8d4 !important;
 }
 
 
@@ -59,5 +60,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .display-4-selection {
     color: #74e8d4;
-    font-size: 67px;
+    font-size: 63px;
 }
+
+.title-devise {
+    color: #fa9fd1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.title-h3devise {
+    color: #74e8d4;
+    font-size: 40px;
+}
+
+.btn-delete {
+    background-color: #ef8354;
+    border-color: #ef8354;
+}
+
+

@@ -1,5 +1,5 @@
 <!-- Page title-->
-<h2 class="h1 text-center mt-5">Se connecter</h2>
+<h2 class="h1 text-center my-5">Se connecter</h2>
 
 <div class="row justify-content-center">
   <!-- Sign in form -->
@@ -13,7 +13,7 @@
         <label for="inputEmail" class="sr-only">Email</label>
         <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: 'Email', class: 'form-control' %>
       </div>
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <small id="emailHelp" class="form-text text-muted">Nous ne partageons vos données avec personne.</small>
     </div>
 
     <!-- Input password -->
@@ -22,7 +22,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-key"></i></span>
         </div>
-        <label for="inputPassword" class="sr-only">Password</label>
+        <label for="inputPassword" class="sr-only">Mot de passe</label>
         <%= f.password_field :password, required: true, autocomplete: "current-password", placeholder: 'Mot de passe', class: 'form-control' %>
       </div>
     </div>
@@ -31,16 +31,16 @@
     <% if devise_mapping.rememberable? %>
       <div class="form-group">
         <%= f.check_box :remember_me, class: 'ml-3 mr-1 my-auto' %>
-        <%= f.label "Rester connecté", class: 'my-auto' %>
+        <%= f.label "Tu veux rester connecté(e) ?", class: 'my-auto' %>
       </div>
     <% end %>
 
     <!-- Submit button -->
     <div class="form-group admin-connect col-12">
       <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Connexion</button>
-    </div>
+    </div><br><br>
 
     <!-- Links -->
     <%= render "devise/shared/links" %>
-  <% end %>
+  <% end %><br> <br>
 </div> <!-- /.row-->
