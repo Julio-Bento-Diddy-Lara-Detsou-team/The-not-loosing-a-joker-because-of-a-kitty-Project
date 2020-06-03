@@ -25,6 +25,9 @@ class CartsController < ApplicationController
 
     # Calculate total cart price to pass it to the view
     @cart_price = helpers.calculate_total_cart_price(@items)
+
+    # Count total number of items to pass is to the view
+    @items_count = @items.count
   end
 
   def destroy
