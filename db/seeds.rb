@@ -2,6 +2,7 @@ Item.destroy_all
 User.destroy_all
 Order.destroy_all
 OrderItem.destroy_all
+Cart.destroy_all
 
 users = []
 items = []

@@ -1,4 +1,8 @@
 class CartsController < ApplicationController
+  include ApplicationHelper
+
+  before_action :authenticate_user!, except: [:show, :remove_item]
+  before_action :get_cart
 
   def create
     @cart = Cart.create(user: current_user())
@@ -9,28 +13,21 @@ class CartsController < ApplicationController
   end
 
   def show
-    # Get current user
-    @user = current_user
+    # Get user's item
+    @item = Item.find(params[:id])
 
-    # Get users items
-    puts @item= Item.find(params[:id])
-
-    # Create a new cart
-    # @cart = Cart.create!(user_id: @user)
+    # Get Cart
+    @cart = get_cart
 
     # Add item to User's cart
     # @cart.items << @item
     # @cart.save
 
-    # Test d'affichage de données examples
-    @items = Item.all
+    # Get user's cart's items
+    @items = @cart.items
 
     # Calculate total cart price
     @cart_price = helpers.calculate_total_cart_price(@items)
-  end
-
-  def update
-
   end
 
   def destroy
@@ -47,5 +44,7 @@ class CartsController < ApplicationController
 
     redirect_to cart_path
   end
+
+  private
 
 end
