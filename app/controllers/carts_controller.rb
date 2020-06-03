@@ -1,32 +1,29 @@
 class CartsController < ApplicationController
   include ApplicationHelper
 
-  before_action :authenticate_user!, except: [:show, :remove_item]
-  before_action :get_cart
+  before_action :authenticate_user!
+  before_action :create_session_cart
 
   def create
     @cart = Cart.create(user: current_user())
 
     # Add new cart to user #TODO : Complete code below
-    # current_user.cart = @cart
-    # current_user.save
+    current_user.cart = @cart
+    current_user.save
   end
 
   def show
     # Get user's item
     @item = Item.find(params[:id])
 
-    # Get Cart
-    @cart = get_cart
+    # Add item to User's cart items list
+    current_user.cart.items << @item
+    current_user.save
 
-    # Add item to User's cart
-    # @cart.items << @item
-    # @cart.save
+    # Get user's cart's items to pass it to the view
+    @items = current_user.cart.items
 
-    # Get user's cart's items
-    @items = @cart.items
-
-    # Calculate total cart price
+    # Calculate total cart price to pass it to the view
     @cart_price = helpers.calculate_total_cart_price(@items)
   end
 
