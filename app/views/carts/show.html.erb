@@ -9,7 +9,9 @@
         <div class="card mb-3">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <img src="https://cdn-s-www.dna.fr/images/A2B51F63-FA5C-463B-B27E-3FDCDBDA7CFD/NW_raw/grumpy-cat-avait-7-ans-photo-twitter-1558093797.jpg" class="card-img" alt="...">
+              <a href="<%= item_path(item.id) %>">
+                <img src="<%= item.image_url %>" class="card-img" alt="...">
+              </a>
             </div>
             <div class="col-md-8">
               <div class="card-body">
