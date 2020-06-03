@@ -2,7 +2,6 @@ Item.destroy_all
 User.destroy_all
 Order.destroy_all
 OrderItem.destroy_all
-Category.destroy_all
 
 users = []
 items = []

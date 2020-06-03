@@ -1,2 +1,0 @@
-class AddCategoryToItem < ApplicationRecord
-end
