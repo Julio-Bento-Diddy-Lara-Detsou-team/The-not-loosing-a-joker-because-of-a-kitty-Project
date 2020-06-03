@@ -13,6 +13,9 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
+                <a href="<%= remove_item_path(id: item.id) %>">
+                  <button type="submit" class="close">&times;</button>
+                </a>
                 <div class="row align-items-center">
                   <div class="col">
                     <h5 class="card-title"><%= item.title %></h5>
