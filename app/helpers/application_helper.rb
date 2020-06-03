@@ -22,4 +22,8 @@ module ApplicationHelper
     @cart_price
   end
 
+  def is_item_in_cart?(item)
+    current_user && current_user.cart.items.include?(item) ? true : false
+  end
+
 end
