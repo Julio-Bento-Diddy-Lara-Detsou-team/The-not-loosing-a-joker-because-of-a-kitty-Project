@@ -5,33 +5,24 @@ class CartsController < ApplicationController
   end
 
   def show
-    # # Get current user
-    # @user = current_user
-    #
-    # # Get users items
-    # puts @item= Item.find(params[:id])
-    #
-    # # Add item to user's
+    # Get current user
+    @user = current_user
+
+    # Get users items
+    puts @item= Item.find(params[:id])
+
+    # Create a new cart
     # @cart = Cart.create!(user_id: @user)
-    #
-    # # Add item to User's cart
+
+    # Add item to User's cart
     # @cart.items << @item
     # @cart.save
 
     # Test d'affichage de données examples
     @items = Item.all
 
-    # Calculate cart price TODO: Place this small function into a helper
-    def calculate_total_cart_price(items)
-      @cart_price = 0
-      items.each do |item|
-        @cart_price += item.price
-      end
-
-      @cart_price
-    end
-
-    @cart_price = calculate_total_cart_price(@items)
+    # Calculate total cart price
+    @cart_price = helpers.calculate_total_cart_price(@items)
   end
 
   def update
