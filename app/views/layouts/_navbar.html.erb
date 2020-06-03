@@ -50,9 +50,9 @@
           <li class="nav-item">
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
-          <li>
-            <a href="#" class="nav-link"><img src="https://img.icons8.com/material-rounded/24/000000/shopping-basket-2.png"/><%= count_total_cart_items %></a>
-          </li>
+<!--          <li>-->
+<!--            <a href="#" class="nav-link"><img src="https://img.icons8.com/material-rounded/24/000000/shopping-basket-2.png"/><%#= count_total_cart_items %></a>-->
+<!--          </li>-->
         <% else %>
           <li class="nav-item">
             <%= link_to "Se connecter", new_user_session_path, class: 'nav-link' %>
