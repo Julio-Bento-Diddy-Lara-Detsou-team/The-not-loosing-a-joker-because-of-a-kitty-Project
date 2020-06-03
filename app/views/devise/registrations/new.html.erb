@@ -25,7 +25,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-key"></i></span>
         </div>
-        <%= f.password_field :password, required: true, autocomplete: "current-password", placeholder: 'Mot de passe', class: 'form-control' %>
+        <%= f.password_field :password, required: true, autocomplete: "mot de passe actuel", placeholder: 'Mot de passe', class: 'form-control' %>
       </div>
       <% if @minimum_password_length %>
         <small>(<%= @minimum_password_length %> caractères minimum)</small>
@@ -38,16 +38,16 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-key"></i></span>
         </div>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Mot de passe', class: 'form-control' %>
+        <%= f.password_field :confirmation_du_mot_de_passe, autocomplete: "new-password", placeholder: 'Mot de passe', class: 'form-control' %>
       </div>
-      <small>Saisissez une seconde fois votre mot de passe</small>
+      <small>Saisis une seconde fois ton mot de passe</small>
     </div>
 
     <!-- Input remember me -->
     <% if devise_mapping.rememberable? %>
       <div class="form-group">
         <%= f.check_box :remember_me, class: 'ml-3 mr-1 my-auto' %>
-        <%= f.label "Rester connecté", class: 'my-auto' %>
+        <%= f.label "Tu veux rester connecté(e)?", class: 'my-auto' %>
       </div>
     <% end %>
 
