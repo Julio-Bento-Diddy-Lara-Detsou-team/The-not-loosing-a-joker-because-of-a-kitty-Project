@@ -22,4 +22,8 @@ module ApplicationHelper
     @cart_price
   end
 
+  #
+  def count_total_cart_items
+    @count = current_user.cart.items.count
+  end
 end
