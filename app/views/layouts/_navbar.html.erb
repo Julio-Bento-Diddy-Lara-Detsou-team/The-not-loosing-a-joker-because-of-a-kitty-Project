@@ -47,15 +47,24 @@
           <a class="nav-link" href="#">L'équipe Kitty Sweety</a>
         </li>
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          <li class="nav-item dropdown">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ma session 🐱
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+              <div class="dropdown-divider"></div>
+            </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Se connecter", new_user_session_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "S'inscrire", new_user_registration_path, class: 'nav-link' %>
+          <li class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Connexion/Inscription 🐱</button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Se connecter", new_user_session_path, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "S'inscrire", new_user_registration_path, class: 'dropdown-item' %>
+            </div>
           </li>
         <% end %>
       </ul>
