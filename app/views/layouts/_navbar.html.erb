@@ -53,17 +53,15 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
-              <div class="dropdown-divider"></div>
             </div>
           </li>
         <% else %>
           <li class="btn-group">
-            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Connexion/Inscription 🐱</button>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Se connecter", new_user_session_path, class: 'dropdown-item' %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "S'inscrire", new_user_registration_path, class: 'dropdown-item' %>
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion/Inscription 🐱</button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Se connecter", new_user_session_path, class: 'dropdown-item' %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "S'inscrire", new_user_registration_path, class: 'dropdown-item' %>
             </div>
           </li>
         <% end %>
