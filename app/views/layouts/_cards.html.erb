@@ -23,7 +23,7 @@
           <p class="card-text h4 text-center"><%= item.price %>€</p>
         </div>
         <div class="card-footer text-center">
-          <a href="#" class="btn btn-primary"><i class="fas fa-cart-arrow-down"></i> Ajouter au panier</a>
+          <a href="<%= cart_path(id: item.id) %>" class="btn btn-primary"><i class="fas fa-cart-arrow-down"></i> Ajouter au panier</a>
         </div>
       </div>
     </div>

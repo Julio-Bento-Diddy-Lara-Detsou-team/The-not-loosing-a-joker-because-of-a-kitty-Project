@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'items#index'
-  get 'home/private'
+  devise_for :users
   resources 'items'
+  resources 'carts'
+  get 'delete/item/:id', to: 'carts#remove_item', as: 'remove_item'
   resources :charges
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
