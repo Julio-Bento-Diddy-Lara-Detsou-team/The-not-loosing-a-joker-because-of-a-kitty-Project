@@ -31,3 +31,4 @@
 .floo
 .flooignore
 .DS_Store
+.env

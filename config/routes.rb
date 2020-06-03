@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources 'items'
   resources 'carts'
   get 'delete/item/:id', to: 'carts#remove_item', as: 'remove_item'
+  resources :charges
 end
