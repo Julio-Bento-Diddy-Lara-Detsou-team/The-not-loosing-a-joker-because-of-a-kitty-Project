@@ -1,17 +1,21 @@
 <br class="container">
-  <div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
-      <h1>Editez votre profil</h1>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <h1 class="display-4-selection text-center">Editez votre profil</h1>
 
-      <%= render 'update', user: @user %>
-      <div class="text-center">
-        <%= link_to 'Voir le profil', @user, class:"btn btn-primary" %> |
-        <%= link_to 'Retour Accueil', root_path, class:"btn btn-secondary" %>
-      </div>
+    <!-- Update Form -->
+    <%= render 'update_form', user: @user %>
+
+    <div class="text-center mt-5">
+      <%= link_to 'Voir le profil', @user, class:"btn btn-primary mr-5" %>
+      <%= link_to 'Retour Accueil', root_path, class:"btn btn-secondary" %>
     </div>
-    <div class="col-3"></div>
+
   </div>
+</div>
+<div class="col-3"></div>
+</div>
 </br>
 </br>
 </br>

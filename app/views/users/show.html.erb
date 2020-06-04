@@ -1,10 +1,10 @@
-<h1 class=" h3 text-center my-5">Bonjour <%=@user.first_name %> </h1>
+<h1 class="display-4-selection text-center my-5">Profil</h1>
 
 
   <div class="row justify-content-center">
     <div class="card border-primary mb-3" style="max-width: 18rem;">
       <div class="card-header">
-        <p class="h6 text-center"><%= @user.first_name %> <%= @user.last_name %></p>
+        <p class="h4 text-center"><%= @user.first_name %> <%= @user.last_name %></p>
       </div>
       <div class="card-body text-primary">
         <h5 class="card-title text-center">Informations</h5>
@@ -17,8 +17,8 @@
     </div>
   </div>
   <br>
-  <div class = text-center>
-    <%= link_to "Editer mon profil", edit_user_path(current_user), class: "btn btn-primary" %>
+  <div class="text-center">
+    <%= link_to "Editer mon profil", edit_user_path(current_user), class: "btn btn-primary mr-5" %>
     <%= link_to 'Retour Accueil', root_path, class:"btn btn-secondary" %>
     <br><br><br>
 
