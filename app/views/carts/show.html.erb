@@ -1,14 +1,22 @@
 <!-- Page Title-->
-<h2 class="display-4-selection text-center mb-5 mt-4">Votre panier</h2>
+<h1 class="display-4-selection text-center my-5">Votre panier</h1>
 
-
-<div class="container">
-  <div class="row justify-content-center mb-3">
+<div class="row justify-content-around mb-3">
+  <!-- If cart is empty-->
+  <% if !current_user.cart.items.first %>
+    <div class="row flex-column justify-content-center mb-5">
+      <h2 class="text-center">Oups ! On dirait que votre panier est vide... <br />Ajoutez des photos sans plus attendre !</h2>
+      <%= image_tag 'empty_cart.svg', size: "400", class: "mx-auto" %>
+      <%= link_to items_path, style: "text-decoration:none" do %>
+        <button class="btn btn-primary btn-block p-3 font-weight-bold" type="button"><i class="fas fa-shopping-basket mr-3"></i>Choisir des photos</button>
+      <% end %>
+    </div>
+  <% else %>
     <!-- Items list -->
     <div class="col-lg-6">
-      <% @items.each do |item| %>
+      <% @items.sort_by(&:price).each do |item| %>
         <div class="row">
-          <div class="card card-cart mb-3 align-items-center">
+          <div class="card card-cart align-items-center mb-3">
             <div class="row align-items-center">
               <div class="col-lg-4">
                 <a href="<%= item_path(item.id) %>">
@@ -17,18 +25,16 @@
               </div>
               <div class="col-lg-8">
                 <div class="card-body">
+                  <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE" class="close">&times;</a>
                   <div class="row align-items-center">
-                    <div class="col-5">
-                      <h5 class="card-title text-nowrap"><%= item.title %></h5>
+                    <div class="col">
+                      <h5 class="card-title"><%= item.title %></h5>
+                      <!-- ---------------------------- TODO: Rajouter item.category --------------------------- -->
                       <small class="text-muted">Chat..pardeur</small>
                     </div>
-                    <div class="col-5">
-                      <p class="h3 text-right text-nowrap my-0"><%= item.price %>€</p>
+                    <div class="col">
+                      <p class="h3 text-right"><%= item.price %>€</p>
                     </div>
-                    <div class="col-2">
-                      <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE"><i class="fas fa-times" style="color:red"></i></a>
-                    </div>
-
                   </div>
                 </div>
               </div>
@@ -40,9 +46,9 @@
 
     <!-- Cart total amount -->
     <div class="col-lg-4">
-      <h2 class="text-center mb-5 mt-3">Total de votre panier (<%= @items_count %>)</h2>
+      <h2 class="text-center mb-5">Total de votre panier (<%= @items_count %>)</h2>
 
-      <div class="ml-5">
+      <div class="row ml-5">
         <p class="mb-3"><i class="fas fa-check mr-3"></i>Aucun frais de ports</p>
         <p class="mb-3"><i class="fas fa-check mr-3"></i>Envoi instantané par email</p>
         <p class="mb-3"><i class="fas fa-check mr-3"></i>Satisfait mais pas remboursé</p>
@@ -64,8 +70,8 @@
 
       <!-- Create order Button -->
       <div class="row justify-content-center">
-        <a href="#" class="btn btn-primary" type="submit">Passer commande</a>
+        <%= render 'carts/stripe_form', {cart_price: @cart_price} %>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
