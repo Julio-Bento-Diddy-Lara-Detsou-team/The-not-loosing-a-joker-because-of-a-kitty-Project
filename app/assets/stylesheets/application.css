@@ -18,5 +18,6 @@
  *= require "home"
  *= require "card"
  *= require "footer"
+ *= require "charges"
  *= require_self
  */
