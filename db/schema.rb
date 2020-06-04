@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_210701) do
     t.string "description"
     t.string "address"
     t.string "zipcode"
+    t.boolean "is_admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
