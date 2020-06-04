@@ -2,6 +2,8 @@ class Item < ApplicationRecord
   has_many :shopping_sessions
   has_many :carts, through: :shopping_sessions
 
+  belongs_to :category
+
   has_many :order_items
   has_many :orders, through: :order_items
 
