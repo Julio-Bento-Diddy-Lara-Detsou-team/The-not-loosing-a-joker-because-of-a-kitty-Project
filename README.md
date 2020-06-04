@@ -1,6 +1,6 @@
 # Kitty Sweety Project
 
-Pictures of most incredible cats
+Pictures of the most incredible cats
 
 ![Cat image](https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1101&q=80)
 
@@ -8,15 +8,14 @@ Pictures of most incredible cats
 
 ### Admin Account
 
-Sign up with :
-**login :** gato@gatodoe.com 
-**password :** miaow123
-
+Sign in with (once the db:seed has been done):
+**login :** kittysweety@yopmail.com
+**password :** azertyu
 
 ## :wrench: Local installation
 
 ### Configuration
-Enter following commands in your terminal :
+Enter the following commands in your terminal :
 
 `git clone git@github.com:Julio-Bento-Diddy-Lara-Detsou-team/The-not-loosing-a-joker-because-of-a-kitty-Project.git`
 
@@ -24,7 +23,7 @@ Enter following commands in your terminal :
 
 `bundle install`
 
-### Option 1 : For the faster ones
+### Option 1 : For the fast ones
 
 `rails db:setup`
 
@@ -34,15 +33,15 @@ Enter following commands in your terminal :
 
 `rails db:migrate`
 
-### Database initialisation
+### Database initialization
 
 `rails db:seed`
 
 ### Launch server
 
-`rails s`
+`rails server`
 
-Well done buddy, go on :
+Well done buddy, now go there :
 
 http://localhost:3000/
 
@@ -51,8 +50,8 @@ http://localhost:3000/
 ### (NB) Admin Account
 
 Sign in with :
-**login :** gato@gatodoe.com 
-**password :** miaow123 
+**login :** kittysweety@yopmail.com
+**password :** azertyu
 
 *Enjoy the quick tour*
 
