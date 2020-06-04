@@ -16,19 +16,20 @@
     <div class="col-lg-6">
       <% @items.sort_by(&:price).each do |item| %>
         <div class="row">
-          <div class="card mb-3">
-            <div class="row no-gutters">
-              <div class="col-md-4">
+          <div class="card card-cart align-items-center mb-3">
+            <div class="row align-items-center">
+              <div class="col-lg-4">
                 <a href="<%= item_path(item.id) %>">
-                  <img src="https://cdn-s-www.dna.fr/images/A2B51F63-FA5C-463B-B27E-3FDCDBDA7CFD/NW_raw/grumpy-cat-avait-7-ans-photo-twitter-1558093797.jpg" class="card-img" alt="...">
+                  <div class="cart-card-cat-img" style="background-image:url(<%= item.image_url %>)"></div>
                 </a>
               </div>
-              <div class="col-md-8">
+              <div class="col-lg-8">
                 <div class="card-body">
                   <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE" class="close">&times;</a>
                   <div class="row align-items-center">
                     <div class="col">
                       <h5 class="card-title"><%= item.title %></h5>
+                      <!-- ---------------------------- TODO: Rajouter item.category --------------------------- -->
                       <small class="text-muted">Chat..pardeur</small>
                     </div>
                     <div class="col">

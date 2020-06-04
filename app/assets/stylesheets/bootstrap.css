@@ -5189,19 +5189,11 @@ input[type="button"].btn-block {
 .card-img-bottom {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  width: 100%;
 }
 
 .card-img,
 .card-img-top {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 8px;
-}
-
-.card-img,
-.card-img-bottom {
-  border-bottom-right-radius: 23px;
-  border-bottom-left-radius: 23px;
+  border-radius: 5px 5px 5px 5px/15px 0px 0px 0px;
 }
 
 .card-deck .card {
