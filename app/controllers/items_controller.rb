@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   include ApplicationHelper
 
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :create_session_cart
 
   def index
     @items = Item.all
