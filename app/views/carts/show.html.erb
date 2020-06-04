@@ -15,9 +15,10 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <a href="<%= remove_item_path(id: item.id) %>">
-                  <button type="submit" class="close">&times;</button>
-                </a>
+                <%#= form_tag shopping_session_path(item.id), method: "delete" do %>
+                  <%#= submit_tag "&times;", {class: 'close'} %>
+                <%# end %>
+                <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE">&times;</a>
                 <div class="row align-items-center">
                   <div class="col">
                     <h5 class="card-title"><%= item.title %></h5>
@@ -37,7 +38,7 @@
 
   <!-- Cart total amount -->
   <div class="col-lg-4">
-    <h2 class="text-center mb-5">Total de votre panier</h2>
+    <h2 class="text-center mb-5">Total de votre panier (<%= @items_count %>)</h2>
 
     <div class="row ml-5">
       <p class="mb-3"><i class="fas fa-check mr-3"></i>Aucun frais de ports</p>
@@ -65,5 +66,3 @@
     </div>
   </div>
 </div>
-
-
