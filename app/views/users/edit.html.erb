@@ -1,1 +1,21 @@
-<h1>Coucou les zouzouzssssss</h1>
+<br class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <h1>Editez votre profil</h1>
+
+      <%= render 'update', user: @user %>
+      <div class="text-center">
+        <%= link_to 'Voir le profil', @user, class:"btn btn-primary" %> |
+        <%= link_to 'Retour Accueil', root_path, class:"btn btn-secondary" %>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</br>
+</br>
+</br>
+
+
+
+</main>
