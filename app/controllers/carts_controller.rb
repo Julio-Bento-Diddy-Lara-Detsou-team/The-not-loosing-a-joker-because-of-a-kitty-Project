@@ -3,14 +3,6 @@ class CartsController < ApplicationController
 
   before_action :authenticate_user!
 
-  def create
-    @cart = Cart.create(user: current_user())
-
-    # Add new cart to user #TODO : Complete code below
-    current_user.cart = @cart
-    current_user.save
-  end
-
   def show
     # Get user's cart's items to pass it to the view
     @items = current_user.cart.items
@@ -22,7 +14,4 @@ class CartsController < ApplicationController
     @items_count = @items.count
   end
 
-  def destroy
-    @cart = Cart.destroy(params[:id])
-  end
 end
