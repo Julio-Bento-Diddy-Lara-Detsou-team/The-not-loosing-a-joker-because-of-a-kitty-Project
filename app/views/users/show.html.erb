@@ -1,0 +1,17 @@
+<h1 class=" h3 text-center my-5">Bonjour <%=@user.first_name %> </h1>
+
+<div class="row flex-column justify-content-center mb-5">
+  <ul>
+    <li><%= @user.first_name %></li>
+    <li><%= @user.last_name %></li>
+    <li><%= @user.email %></li>
+    <li><%= @user.id %></li>
+    <li><%= @user.address %></li>
+    <li><%= @user.zipcode %></li>
+  </ul>
+  <br>
+
+<%= link_to "Editer mon profil", edit_user_path(current_user), class: "btn-primary p-2" %>
+<br>
+<%= link_to "↩️  Retour", :back %>
+</div>
