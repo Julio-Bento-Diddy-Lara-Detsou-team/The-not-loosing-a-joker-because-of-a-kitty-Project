@@ -61,7 +61,7 @@ User.create!(
   first_name: "Admin",
   last_name: "Admin",
   description: Faker::Lorem.paragraph,
-  email: "admin@admin.com",
+  email: "kittysweety@yopmail.com",
   password: "azertyu",
   password_confirmation: "azertyu",
   address: Faker::Address.street_address,

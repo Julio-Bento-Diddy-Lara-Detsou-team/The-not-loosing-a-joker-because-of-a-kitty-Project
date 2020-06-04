@@ -1,4 +1,4 @@
-class OrderMailer < ApplicationMailer
+class AdminMailer < ApplicationMailer
   default from: 'moufaca755@gmail.com'
 
   def order_email(order)
@@ -7,8 +7,8 @@ class OrderMailer < ApplicationMailer
     @cart = @user.cart
     @url = 'https://thp-keety-sweety.herokuapp.com/'
     @cart_price = cart_price(order)
-    mail(to: @user.email, subject: 'Votre commande Kitty Sweety !')
-
+    @admin = User.find_by(is_admin: true)
+    mail(to: @admin.email, subject: 'Une commande a été passé sur Kitty Sweety !')
   end
 
 end
