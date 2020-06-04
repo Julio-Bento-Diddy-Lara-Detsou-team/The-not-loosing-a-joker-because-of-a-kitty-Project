@@ -15,7 +15,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">L'équipe Kitty Sweety</a>
         </li>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && session[:cart] %>
           <li class="nav-item">
             <%= link_to "Panier", cart_path(current_user.cart.id), class: 'nav-link' %>
           </li>
