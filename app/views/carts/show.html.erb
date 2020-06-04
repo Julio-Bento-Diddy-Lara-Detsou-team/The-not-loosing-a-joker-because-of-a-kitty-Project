@@ -62,7 +62,7 @@
 
     <!-- Create order Button -->
     <div class="row justify-content-center">
-      <a href="#" class="btn btn-primary" type="submit">Passer commande</a>
+      <%= render 'carts/stripe_form', {cart_price: @cart_price} %>
     </div>
   </div>
 </div>

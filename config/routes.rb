@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources 'items'
   resources 'carts'
   resources 'shopping_sessions', only: [:new, :destroy]
-  resources :charges
+  resources 'orders'
+  resources 'order_items'
 end
