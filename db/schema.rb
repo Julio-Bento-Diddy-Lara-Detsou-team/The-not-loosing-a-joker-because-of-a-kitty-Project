@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_095643) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.bigint "category_id"
     t.integer "price"
     t.index ["category_id"], name: "index_items_on_category_id"
