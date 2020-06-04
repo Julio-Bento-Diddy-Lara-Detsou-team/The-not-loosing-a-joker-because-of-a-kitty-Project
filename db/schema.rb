@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_095643) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.bigint "category_id"
     t.integer "price"
     t.index ["category_id"], name: "index_items_on_category_id"
@@ -80,7 +81,6 @@ ActiveRecord::Schema.define(version: 2020_06_04_095643) do
     t.string "description"
     t.string "address"
     t.string "zipcode"
-    t.boolean "is_admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

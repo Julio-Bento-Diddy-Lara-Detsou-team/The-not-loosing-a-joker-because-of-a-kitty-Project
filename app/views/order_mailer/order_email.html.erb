@@ -1,0 +1,21 @@
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+
+  <% @cart.items.each do |item| %>
+          <h5><%= item.title %></h5>
+          <small><%= item.description %></small>
+          <h3><%= item.price %>€</h3>
+  <% end %>
+
+  <!-- Cart total amount -->
+  <h2>Quantité : <%= @cart.items.count %></h2>
+
+  <!-- Total Products Price -->
+    <bold>Prix total :</bold>
+    <p><%= @cart_price %>€</p>
+  </div>
+
+</body>
