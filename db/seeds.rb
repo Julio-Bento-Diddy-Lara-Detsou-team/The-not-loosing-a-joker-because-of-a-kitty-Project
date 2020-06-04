@@ -4,11 +4,20 @@ User.destroy_all
 Order.destroy_all
 OrderItem.destroy_all
 Cart.destroy_all
+Category.destroy_all
 
 # Useful variables for the seeding
+categories = []
 users = []
 items = []
 orders = []
+
+
+# Seed Create Category
+categories << Category.create!(title: 'Espiègle')
+categories << Category.create!(title: 'Affectueux')
+categories << Category.create!(title: 'Timide')
+categories << Category.create!(title: 'Enragé')
 
 # Seed Items
 20.times do |x|
@@ -18,8 +27,8 @@ orders = []
     title: Faker::Creature::Cat.name,
     description: Faker::Lorem.paragraph,
     image_url: "https://placekitten.com/200/#{number_photo}",
-    category: %w[Espiègle Affectueux Timide Enragé].sample,
-    price: rand(1..5))
+    price: rand(1..5),
+    category_id: Category.all.sample.id)
 
 
   puts "#{x + 1}/20 items created"
