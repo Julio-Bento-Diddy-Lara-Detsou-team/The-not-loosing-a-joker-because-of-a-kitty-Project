@@ -29,7 +29,11 @@ ActiveRecord::Schema.define(version: 2020_06_03_210701) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
-    t.float "price"
+
+    t.bigint "category_id"
+    t.integer "price"
+    t.index ["category_id"], name: "index_items_on_category_id"
+
   end
 
   create_table "order_items", force: :cascade do |t|
