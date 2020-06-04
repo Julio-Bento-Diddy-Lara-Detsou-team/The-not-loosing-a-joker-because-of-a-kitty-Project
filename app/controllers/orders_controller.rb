@@ -27,9 +27,21 @@ class OrdersController < ApplicationController
             currency: 'EUR',
         })
 
-    # rescue Stripe::CardError => e
-    #   flash[:error] = e.message
-    #   redirect_to new_charge_path
+    # Save cart's data as an order
+    @order = Order.create!(stripe_customer_id: customer.id, user_id: current_user.id)
+
+    # Save cart's items as order_items
+    current_user.cart.items.each do |item|
+      @order_items = OrderItem.create!(
+          quantity: 1, # TODO : Replace this by item.quantity once the property will be added to the items table
+          total_price: calculate_total_cart_price(current_user.cart.items),
+          order_id: @order.id,
+          item_id: item.id
+      )
+    end
+
+    # Empty user's cart
+    current_user.cart.items.destroy_all
 
     # Redirect and display success message
     flash[:success] = "Miaaaaouh ! Votre commande à été acceptée et vous sera prochainement envoyée par email."
