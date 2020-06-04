@@ -1,0 +1,24 @@
+<%= form_tag orders_path do %>
+  <article>
+    <!-- Error Message -->
+    <% if flash[:error].present? %>
+      <div class="alert mt-3 alert-danger alert-dismissable fade show" id="error_explanation" role="alert">
+        <%= flash[:error] %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+    <% end %>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Payer votre commande"
+          data-amount="<%= cart_price * 100 %>"
+          data-locale="fr"
+          data-currency="eur"
+          data-country="FR"
+          data-label="Cliquer pour payer <%= cart_price %> €"
+          data-image="https://image.flaticon.com/icons/svg/616/616430.svg">
+  </script>
+<% end %>
