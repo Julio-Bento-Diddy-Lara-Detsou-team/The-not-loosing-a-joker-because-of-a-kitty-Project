@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources 'shopping_sessions', only: [:new, :destroy]
   resources 'teams', only: [:index]
   resources 'orders', only: [:create]
+  resources 'users', only: [:show, :edit, :update]
 end
