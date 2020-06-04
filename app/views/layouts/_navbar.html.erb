@@ -12,8 +12,8 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= teams_path %>">L'équipe Kitty Sweety</a>
+        <li class="nav-item px-3 h5">
+          <%= link_to "La Team ", teams_path, class: "nav-link", role: "button" %>
         </li>
         <% if user_signed_in? %>
           <% if current_user.cart %>
