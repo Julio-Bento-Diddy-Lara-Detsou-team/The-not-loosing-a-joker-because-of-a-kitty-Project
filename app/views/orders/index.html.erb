@@ -4,24 +4,39 @@
 <div class="row">
   <div class="col-4">
     <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+      <!-- Display orders -->
+      <% active = true %>
+
       <% @orders.each do |order| %>
-        <%= order.created_at %>
-        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">
-          Settings
+        <a class="list-group-item list-group-item-action <%= "active" if active %>" id="list-settings-list" data-toggle="list" href="#list-<%= order.id %>" role="tab" aria-controls="<%= order.id %>">
+          <span class="h6 mr-3">Commande :</span> #<%= order.id %> <br />
+          <span class="h6 mr-3">Date :</span> <%= order.created_at.strftime("%d/%m/%Y %H:%M") %> <br />
+          <span class="h6 mr-3">Montant : </span><%= calculate_total_cart_price(order.items) %> € <br />
+          <span class="h6 mr-3">Nombre de photos : </span><%= order.items.count %> €
         </a>
-    <% end %>
+        <% active = false %>
+      <% end %>
     </div>
   </div>
   <div class="col-8">
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
-      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+      <!-- Display order_items -->
+      <% active_item = true %>
+
+      <% @orders.each do |order| %>
+        <div class="tab-pane fade <%= "active show" if active_item %>" id="list-<%= order.id %>" role="tabpanel" aria-labelledby="list-<%= order.id %>-list">
+          <% order.order_items.each do |order_item| %>
+            <% @item = @items.find(order_item.item_id) %>
+            <ul style="list-style: none">
+              <li><span class="h6 mr-3">Nom :</span><%= @item.title %></li>
+              <li><span class="h6 mr-3">Catégorie :</span><%= @item.category.title %></li>
+              <li><span class="h6 mr-3">Prix :</span><%= @item.price %>€</li>
+              <li><span class="h6 mr-3">Dscription :</span><%= truncate(@item.description, :length => 150) %></li>
+            </ul>
+          <% end %>
+        </div>
+        <% active_item = false %>
+      <% end %>
     </div>
   </div>
 </div>

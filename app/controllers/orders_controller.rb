@@ -5,9 +5,8 @@ class OrdersController < ApplicationController
 
   # Show all user's passed orders and their orders
   def index
-    # Get all orders
     @orders = current_user.orders
-
+    @items = Item.all
   end
 
   def create
