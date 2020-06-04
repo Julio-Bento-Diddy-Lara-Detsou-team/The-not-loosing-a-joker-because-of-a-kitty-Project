@@ -12,6 +12,7 @@
           <p class="card-text text-center"><span class="h6 text-center">email:</span><br> <span class="ml-3 text-center" ><%= @user.email %></span><br></p><br>
           <p class="card-text text-center"><span class="h6 text-center">Adresse:</span><br> <span class="text-center"><%= @user.address %><br></span><br></p>
           <p class="card-text text-center"><span class="h6 text-center">Code postal:</span><br> <span class="ml-3"><%= @user.zipcode %><br></span><br></p>
+
       </div>
     </div>
   </div>
@@ -19,4 +20,6 @@
   <div class = text-center>
     <%= link_to "Editer mon profil", edit_user_path(current_user), class: "btn btn-primary" %>
     <%= link_to 'Retour Accueil', root_path, class:"btn btn-secondary" %>
+    <br><br><br>
+
   </div>
