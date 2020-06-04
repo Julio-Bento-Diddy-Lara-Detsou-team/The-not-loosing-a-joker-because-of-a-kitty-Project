@@ -7,25 +7,25 @@
     <div class="col-lg-6">
       <% @items.each do |item| %>
         <div class="row">
-          <div class="card card-cart mb-3">
+          <div class="card card-cart mb-3 align-items-center">
             <div class="row align-items-center">
               <div class="col-lg-4">
                 <a href="<%= item_path(item.id) %>">
-                  <img src="<%= item.image_url %>" class="card-img" alt="...">
+                  <div class="cart-card-cat-img" style="background-image:url(<%= item.image_url %>)"></div>
                 </a>
               </div>
               <div class="col-lg-8">
                 <div class="card-body">
-                  <div class="row align-items-end">
+                  <div class="row align-items-center">
                     <div class="col-5">
-                      <h5 class="card-title"><%= item.title %></h5>
+                      <h5 class="card-title text-nowrap"><%= item.title %></h5>
                       <small class="text-muted">Chat..pardeur</small>
                     </div>
                     <div class="col-5">
-                      <p class="h3 text-right text-nowrap"><%= item.price %>€</p>
+                      <p class="h3 text-right text-nowrap my-0"><%= item.price %>€</p>
                     </div>
                     <div class="col-2">
-                      <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE"><i class="fas fa-times"></i></a>
+                      <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE"><i class="fas fa-times" style="color:red"></i></a>
                     </div>
                   </div>
                 </div>
@@ -38,9 +38,9 @@
 
     <!-- Cart total amount -->
     <div class="col-lg-4">
-      <h2 class="text-center mb-5">Total de votre panier (<%= @items_count %>)</h2>
+      <h2 class="text-center mb-5 mt-3">Total de votre panier (<%= @items_count %>)</h2>
 
-      <div class="row ml-5">
+      <div class="ml-5">
         <p class="mb-3"><i class="fas fa-check mr-3"></i>Aucun frais de ports</p>
         <p class="mb-3"><i class="fas fa-check mr-3"></i>Envoi instantané par email</p>
         <p class="mb-3"><i class="fas fa-check mr-3"></i>Satisfait mais pas remboursé</p>
