@@ -79,4 +79,7 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #ef8354;
 }
 
-
+.btn-success {
+    background-color: #74e8d4 !important;
+    border-color: #74e8d4 !important;
+}

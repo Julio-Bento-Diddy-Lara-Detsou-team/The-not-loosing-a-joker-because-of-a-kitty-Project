@@ -23,7 +23,13 @@
           <p class="card-text h4 text-center"><%= item.price %>€</p>
         </div>
         <div class="card-footer text-center">
-          <a href="<%= cart_path(id: item.id) %>" class="btn btn-primary"><i class="fas fa-cart-arrow-down"></i> Ajouter au panier</a>
+          <% if is_item_in_cart?(item) %>
+            <!-- Button Remove item from cart-->
+            <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE" class="btn btn-outline-danger"><i class="fas fa-cart-arrow-down"></i> Retirer du panier</a>
+          <% else %>
+            <!-- Button add item to cart -->
+            <a href="<%= new_shopping_session_path(id: item.id) %>" class="btn btn-primary"><i class="fas fa-cart-arrow-down"></i> Ajouter au panier</a>
+          <% end %>
         </div>
       </div>
     </div>
