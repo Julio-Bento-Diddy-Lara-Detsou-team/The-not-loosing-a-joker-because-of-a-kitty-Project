@@ -41,11 +41,22 @@ h1, h2, h3, h4, h5, h6 {
 .bg-danger {
     background-color: #ff595e !important;
 }
+
 .btn-primary {
     background-color: #74e8d4 !important;
     border-color: #74e8d4 !important;
 }
 
+.btn-outline-success {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #74e8d4;
+    border-color: #74e8d4;
+}
 
 .btn-outline-jumbotron {
     color: #74e8d4;
