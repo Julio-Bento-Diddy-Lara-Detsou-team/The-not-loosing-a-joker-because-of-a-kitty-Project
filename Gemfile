@@ -68,4 +68,5 @@ gem 'faker'
 gem 'rubocop'
 gem 'table_print'
 gem 'devise'
-
+gem 'stripe'
+gem 'letter_opener'
