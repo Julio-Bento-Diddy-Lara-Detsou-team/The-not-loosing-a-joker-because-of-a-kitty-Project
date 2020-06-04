@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-          <% if current_user.cart.items.any? %>
+          <% if current_user.cart %>
             <li class="nav-item">
               <a href="<%= cart_path(current_user.cart.id) %>" class="btn btn-success mr-2"><i class="fas fa-cart-arrow-down fa-md"></i></a>
             </li>
