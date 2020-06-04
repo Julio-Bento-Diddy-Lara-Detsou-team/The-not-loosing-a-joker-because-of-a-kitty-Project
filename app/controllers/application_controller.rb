@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   # If session cart does not already exist then create it
   def create_session_cart
-    if user_signed_in? && !session['cart']
+    if user_signed_in? && !current_user.cart
       session['cart'] = Cart.create(user_id: current_user.id)
     end
   end

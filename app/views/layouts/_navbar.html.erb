@@ -16,9 +16,11 @@
           <a class="nav-link" href="#">L'équipe Kitty Sweety</a>
         </li>
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Panier", cart_path(current_user.cart.id), class: 'nav-link' %>
-          </li>
+          <% if current_user.cart %>
+            <li class="nav-item">
+              <%= link_to "Panier", cart_path(current_user.cart.id), class: 'nav-link' %>
+            </li>
+          <% end %>
           <li class="nav-item dropdown">
             <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Ma session 🐱

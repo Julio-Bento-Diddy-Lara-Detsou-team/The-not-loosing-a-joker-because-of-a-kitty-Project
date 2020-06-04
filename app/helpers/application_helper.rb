@@ -23,7 +23,7 @@ module ApplicationHelper
   end
 
   def is_item_in_cart?(item)
-    current_user && current_user.cart.items.include?(item) ? true : false
+    user_signed_in? && current_user.cart && current_user.cart.items.include?(item) ? true : false
   end
 
 end
