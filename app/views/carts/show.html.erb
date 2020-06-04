@@ -4,7 +4,7 @@
 <div class="row justify-content-around mb-3">
   <!-- Items list -->
   <div class="col-lg-6">
-    <% @items.each do |item| %>
+    <% @items.sort_by(&:price).each do |item| %>
       <div class="row">
         <div class="card mb-3">
           <div class="row no-gutters">
