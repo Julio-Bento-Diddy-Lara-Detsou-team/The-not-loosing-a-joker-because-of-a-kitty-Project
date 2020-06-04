@@ -1,20 +1,30 @@
-<div class="container-fluid my-5">
-  <h2 class="display-4-selection ">Mot de passe oublié ?</h2>
+<h2 class="display-4-selection text-center p-5">Mot de passe oublié ?</h2>
 
+<div class="row justify-content-center">
+  <!-- Sign in form -->
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+    <!-- Error messages -->
     <%= render "devise/shared/error_messages", resource: resource %><br>
 
-    <div class="field">
-      <%= f.label :email, class: "title-devise"  %><br>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div><br> <br>
+    <!-- Input email -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: 'Email', class: 'form-control' %>
+      </div>
+      <small id="emailHelp" class="form-text text-muted">Nous ne partageons vos données avec personne.</small>
+    </div>
 
-    <div class="actions">
-      <%= f.submit "Réinitialiser mon mot de passe", class: "btn-primary" %>
+    <!-- Submit button -->
+    <div class="form-group admin-connect col-12">
+      <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Réinitialiser mon mot de passe</button>
+    </div><br><br>
 
-    </div><br> <br>
+    <!-- Links -->
+      <%= render "devise/shared/links" %>
   <% end %>
-
-  <%= render "devise/shared/links" %>
-
-</div>
+</div> <!-- /.row-->
