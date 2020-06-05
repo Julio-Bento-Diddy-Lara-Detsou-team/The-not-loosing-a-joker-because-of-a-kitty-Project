@@ -18,7 +18,9 @@
       <h4>Prix : <%= @item.price %> €</h4>
       <% if is_item_in_cart?(@item) %>
         <!-- Button Remove item from cart-->
-        <a href="<%= shopping_session_path(@item.id) %>" data-method="DELETE" class="btn btn-outline-danger"><i class="fas fa-cart-arrow-down"></i> Retirer du panier</a>
+        <%= button_to shopping_session_path(@item.id), method: :delete, class: "btn btn-outline-danger" do%>
+          <i class="fas fa-cart-arrow-down"></i> Retirer du panier
+        <% end %>
       <% else %>
         <!-- Button add item to cart -->
         <a href="<%= new_shopping_session_path(id: @item.id) %>" class="btn btn-primary"><i class="fas fa-cart-arrow-down"></i> Ajouter au panier</a>
