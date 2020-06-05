@@ -34,6 +34,9 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Mes commandes", orders_path, class: 'dropdown-item' %>
+              <div class="dropdown-divider"></div>              
+              <%= link_to "Modifier mes infos", user_path(current_user), class: 'dropdown-item' %>
+              <div class="dropdown-divider"></div>
               <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
             </div>
           </li>
