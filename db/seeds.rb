@@ -35,7 +35,7 @@ categories << Category.create!(title: 'Enragé')
 end
 
 # Seed Users
-10.times do |x|
+5.times do |x|
   user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
