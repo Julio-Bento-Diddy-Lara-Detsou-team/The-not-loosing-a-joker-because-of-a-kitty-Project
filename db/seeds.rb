@@ -35,7 +35,7 @@ categories << Category.create!(title: 'Enragé')
 end
 
 # Seed Users
-5.times do |x|
+1.times do |x|
   user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -53,7 +53,7 @@ end
   # Seed Cart
   Cart.create!(user_id: user.id)
 
-  puts "#{x + 1}/10 user created"
+  puts "#{x + 1}/1 user created"
 end
 
 # Create Admin
@@ -70,17 +70,17 @@ User.create!(
 )
 puts "One Admin Added"
 # Seed Order
-30.times do |x|
+1.times do |x|
   orders << Order.create!(
       user: users.sample,
       stripe_customer_id: Faker::Code.ean
   )
 
-  puts "#{x + 1}/30 Orders created"
+  puts "#{x + 1}/1 Orders created"
 end
 
 # Seed OrderItem
-30.times do |x|
+1.times do |x|
   OrderItem.create!(
       order: orders.sample,
       item: items.sample,
@@ -88,5 +88,5 @@ end
       total_price: rand(5...200)
   )
 
-  puts "#{x + 1}/30 OrderItem created"
+  puts "#{x + 1}/1 OrderItem created"
 end
