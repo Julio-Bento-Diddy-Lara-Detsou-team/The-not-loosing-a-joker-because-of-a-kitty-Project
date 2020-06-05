@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources 'carts', only: [:show]
   resources 'shopping_sessions', only: [:new, :destroy]
   resources 'teams', only: [:index]
-  resources 'orders', only: [:create]
+  resources 'orders', only: [:create, :index]
   resources 'users', only: [:show, :edit, :update]
 end

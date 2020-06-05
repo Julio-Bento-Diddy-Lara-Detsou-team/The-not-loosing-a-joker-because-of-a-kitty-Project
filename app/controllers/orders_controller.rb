@@ -3,6 +3,12 @@ class OrdersController < ApplicationController
 
   before_action :create_session_cart
 
+  # Show all user's passed orders and their orders
+  def index
+    @orders = current_user.orders
+    @items = Item.all
+  end
+
   def create
     # Get carts informations
     @cart = current_user.cart

@@ -1,0 +1,42 @@
+<!-- Page Title-->
+<h2 class="display-4-selection text-center mb-5">Historiques de vos commandes</h2>
+
+<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <!-- Display orders -->
+      <% active = true %>
+
+      <% @orders.each do |order| %>
+        <a class="list-group-item list-group-item-action <%= "active" if active %>" id="list-settings-list" data-toggle="list" href="#list-<%= order.id %>" role="tab" aria-controls="<%= order.id %>">
+          <span class="h6 mr-3">Commande :</span> #<%= order.id %> <br />
+          <span class="h6 mr-3">Date :</span> <%= order.created_at.strftime("%d/%m/%Y %H:%M") %> <br />
+          <span class="h6 mr-3">Montant : </span><%= calculate_total_cart_price(order.items) %> € <br />
+          <span class="h6 mr-3">Nombre de photos : </span><%= order.items.count %> €
+        </a>
+        <% active = false %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <!-- Display order_items -->
+      <% active_item = true %>
+
+      <% @orders.each do |order| %>
+        <div class="tab-pane fade <%= "active show" if active_item %>" id="list-<%= order.id %>" role="tabpanel" aria-labelledby="list-<%= order.id %>-list">
+          <% order.order_items.each do |order_item| %>
+            <% @item = @items.find(order_item.item_id) %>
+            <ul style="list-style: none">
+              <li><span class="h6 mr-3">Nom :</span><%= @item.title %></li>
+              <li><span class="h6 mr-3">Catégorie :</span><%= @item.category.title %></li>
+              <li><span class="h6 mr-3">Prix :</span><%= @item.price %>€</li>
+              <li><span class="h6 mr-3">Dscription :</span><%= truncate(@item.description, :length => 150) %></li>
+            </ul>
+          <% end %>
+        </div>
+        <% active_item = false %>
+      <% end %>
+    </div>
+  </div>
+</div>
