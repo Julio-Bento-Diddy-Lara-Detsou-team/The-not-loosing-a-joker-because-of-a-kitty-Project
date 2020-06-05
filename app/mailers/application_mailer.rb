@@ -1,5 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'moufaca755@gmail.com'
+  default from: 'julien.tribouillier@orange.fr'
+  # default from: 'moufaca755@gmail.com'
   layout 'mailer'
 
   def cart_price(order)
