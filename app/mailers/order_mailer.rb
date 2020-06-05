@@ -1,5 +1,5 @@
 class OrderMailer < ApplicationMailer
-  default from: 'julien.tribouillier@orange.fr'
+  default from: 'detsouvan@hotmail.com'
   # default from: 'moufaca755@gmail.com'
 
   def order_email(order)
