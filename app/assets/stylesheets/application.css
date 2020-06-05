@@ -17,6 +17,7 @@
  *= require "jumbotron"
  *= require "home"
  *= require "card"
+ *= require "cart"
  *= require "footer"
  *= require_self
  */

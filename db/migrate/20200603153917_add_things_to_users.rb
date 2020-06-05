@@ -5,5 +5,6 @@ class AddThingsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :description, :string
     add_column :users, :address, :string
     add_column :users, :zipcode, :string
+    add_column :users, :is_admin, :boolean, default: false
   end
 end
