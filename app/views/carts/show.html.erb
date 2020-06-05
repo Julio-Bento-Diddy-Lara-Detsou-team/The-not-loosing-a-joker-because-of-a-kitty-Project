@@ -25,7 +25,8 @@
               </div>
               <div class="col-lg-8">
                 <div class="card-body">
-                  <a href="<%= shopping_session_path(item.id) %>" data-method="DELETE" class="close">&times;</a>
+<!--                  <a href="<%#= shopping_session_path(item.id) %>" data-method="DELETE" class="close">&times;</a>-->
+                  <%= button_to shopping_session_path(item.id), method: :delete, class: "close" do%>&times;<% end %>
                   <div class="row align-items-center">
                     <div class="col">
                       <h5 class="card-title"><%= item.title %></h5>
